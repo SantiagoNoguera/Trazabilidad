@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interacción con Contrato Inteligente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold text-center mb-8">Interacción con Contrato Inteligente</h1>
+
+        <div class="flex flex-col items-center space-y-4">
+            <div class="flex flex-col items-center space-y-4">
+                <!-- Estado de conexión -->
+                <div id="connectionStatus" class="text-center text-lg font-medium text-gray-600">
+                    No conectado a Metamask
+                </div>
+
+                <!-- Dirección de la cuenta -->
+                <div id="accountAddress" class="text-center text-sm text-gray-500">
+                    Dirección de la cuenta: N/A
+                </div>
+
+                <button id="connectButton" class="px-4 py-2 bg-blue-500 text-white rounded-md shadow hover:bg-blue-700">
+                    Conectar Metamask
+                </button>
+            </div>
+
+            <div class="w-full max-w-md">
+                <label for="productName" class="block text-sm font-medium text-gray-700">Registrar Producto</label>
+                <input type="text" id="productName"
+                    class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    placeholder="Nombre del Producto">
+                <button id="registerProduct"
+                    class="mt-4 px-4 py-2 bg-green-500 text-white rounded-md shadow hover:bg-green-700 w-full">
+                    Registrar
+                </button>
+            </div>
+
+            <div class="w-full max-w-md mt-6">
+                <button id="getProductList"
+                    class="px-4 py-2 bg-indigo-500 text-white rounded-md shadow hover:bg-indigo-700 w-full">
+                    Obtener Lista de Productos
+                </button>
+                <ul id="productList" class="mt-4 list-disc list-inside bg-white p-4 rounded-md shadow-sm"></ul>
+            </div>
+
+
+            <div class="w-full max-w-md">
+                <label for="productId" class="block text-sm font-medium text-gray-700">Actualizar Estado del
+                    Producto</label>
+                <input type="number" id="productId"
+                    class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    placeholder="ID del Producto">
+                <input type="text" id="location"
+                    class="mt-2 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    placeholder="Ubicación">
+                <button id="updateStatus"
+                    class="mt-4 px-4 py-2 bg-yellow-500 text-white rounded-md shadow hover:bg-yellow-700 w-full">
+                    Actualizar Estado
+                </button>
+            </div>
+
+            <div class="w-full max-w-md">
+                <label for="productHistoryId" class="block text-sm font-medium text-gray-700">Obtener Historial del
+                    Producto</label>
+                <input type="number" id="productHistoryId"
+                    class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                    placeholder="ID del Producto">
+                <button id="getHistory"
+                    class="mt-4 px-4 py-2 bg-purple-500 text-white rounded-md shadow hover:bg-purple-700 w-full">
+                    Obtener Historial
+                </button>
+                <pre id="historyOutput" class="mt-4 p-4 bg-gray-800 text-white rounded-md shadow-sm"></pre>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="src/script.js"></script>
+</body>
+
+</html>
